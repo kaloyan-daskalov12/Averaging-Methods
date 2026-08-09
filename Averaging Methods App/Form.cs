@@ -19,7 +19,7 @@ namespace Averaging_Methods_App
             {0, (string m) => (m == "f" || m == "d") },
             {1, (string m) => (Path.Exists(m)) },
             {2, (string m) => (m == "f" || m == "d") },
-            {3, (string m) => (Path.Exists(m)) },
+            {3, (string m) => (true) },
             {4, (string m) => Tools.ParseSquareBrackets(m).Args != null }
         };
         public static void GetHelp(string tools)

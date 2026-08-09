@@ -31,7 +31,6 @@ namespace AveragingMethods
 
         public string[] GetResult(List<Value> values, List<int> indices)
         {
-            Console.WriteLine(string.Join("; ", values));
             List<string> results = new List<string>();
             for (int i = 0; i < Methods.Count; i++)
             {

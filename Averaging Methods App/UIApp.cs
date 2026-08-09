@@ -63,6 +63,7 @@ namespace Averaging_Methods_App
                 }
                 else
                 {
+                    Console.WriteLine($"Entered and output path: {output_path}");
                     List<string> lines = new List<string>();
                     foreach (var d in data)
                     {
@@ -70,14 +71,13 @@ namespace Averaging_Methods_App
                         if (d.Values.Count != 0) lines.AddRange(Tool.GetResult(d.Values, indices));
                         lines.Add("\n");
                     }
-                    File.WriteAllLines(Path.Combine(Path.GetFullPath(output_path), Path.GetFileName(path)), lines.ToArray());
+                    File.WriteAllLines(Path.GetFullPath(output_path), lines.ToArray());
                 }
             }
             else
             {
                 (string Path, List<Value> Values) data = ParseFile(path);
-                string final_path = Path.Combine(Path.GetFullPath(output_path), Path.GetFileName(data.Path));
-                File.WriteAllLines(Path.Combine(Path.GetFullPath(output_path), Path.GetFileName(path)), Tool.GetResult(data.Values, indices));
+                File.WriteAllLines(Path.GetFullPath(output_path), Tool.GetResult(data.Values, indices));
             }
 
             Console.WriteLine("The results are ready and saved successfully!");
