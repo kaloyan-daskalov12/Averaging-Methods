@@ -4,8 +4,10 @@ using System.Linq;
 
 namespace AveragingMethods
 {
-    public static class BirgeRatioTool
+    public class BirgeRatioTool : IStringOutput
     {
+        public string Name => "Birge Ratio";
+
         internal static BirgeRatioResult Calculate(List<Value> data)
         {
             var validData = data.Where(v => v.DVal > 0).ToList();
@@ -53,6 +55,11 @@ namespace AveragingMethods
                 CriticalLimit = criticalLimit,
                 IsConsistent = birgeRatio <= criticalLimit
             };
+        }
+
+        public string GetOutput(List<Value> values)
+        {
+            throw new NotImplementedException();
         }
     }
 }

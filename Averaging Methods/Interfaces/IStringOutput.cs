@@ -6,6 +6,8 @@ namespace AveragingMethods
 {
     public interface IStringOutput
     {
-        public string GetOutput();
+        public string Name { get; }
+
+        public string GetOutput(List<Value> values);
     }
 }

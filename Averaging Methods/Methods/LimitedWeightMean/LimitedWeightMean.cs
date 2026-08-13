@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AveragingMethods
 {
-    public class LimitedWeightMean : IAverageMethod
+    public class LimitedWeightMean : IAverageMethod, IStringOutput
     {
         public string Name => "Limited Relative Weight Mean";
 
@@ -51,6 +51,11 @@ namespace AveragingMethods
             double sigma = Math.Sqrt(1.0 / sumW);
 
             return (mean, sigma);
+        }
+
+        public string GetOutput(List<Value> values)
+        {
+            throw new NotImplementedException();
         }
 
         double Weight(double sigma)

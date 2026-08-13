@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace AveragingMethods
 {
-    public class EvaluatedAverage : IAverageMethod
+    public class EvaluatedAverage : IAverageMethod, IStringOutput
     {
         private static readonly double[] CriticalReducedChiSq95 = new double[]
         {
@@ -101,6 +101,11 @@ namespace AveragingMethods
         {
             AveragingResult r = CalculateWeightedAverage(values);
             return (r.WeightedMean, r.InternalUncertainty);
+        }
+
+        public string GetOutput(List<Value> values)
+        {
+            throw new NotImplementedException();
         }
     }
 }
