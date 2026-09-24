@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Averaging Methods\Averaging_Methods.csproj" />
+    <ProjectReference Include="..\Averaging_Methods\Averaging_Methods.csproj" />
   </ItemGroup>
 
 </Project>
