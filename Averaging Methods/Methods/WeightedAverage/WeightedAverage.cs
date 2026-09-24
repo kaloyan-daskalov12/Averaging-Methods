@@ -1,8 +1,9 @@
-﻿using System;
+﻿using AveragingMethods;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AveragingMethods
+namespace Averaging_Methods.Methods.WeightedAverage
 {
     // A simple container just for the pure math results
 

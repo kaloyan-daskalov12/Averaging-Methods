@@ -1,10 +1,11 @@
-﻿using System;
+﻿using AveragingMethods;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AveragingMethods
+namespace Averaging_Methods.Methods.WeightedMean
 {
     public class WeightedMean : IAverageMethod
     {

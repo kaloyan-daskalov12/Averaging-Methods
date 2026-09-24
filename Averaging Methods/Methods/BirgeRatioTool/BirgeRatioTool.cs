@@ -1,8 +1,9 @@
-﻿using System;
+﻿using AveragingMethods;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AveragingMethods
+namespace Averaging_Methods.Methods.BirgeRatioTool
 {
     public class BirgeRatioResult
     {
