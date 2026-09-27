@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Averaging_Methods.Methods.GaussianConsensusAveraging
+namespace AveragingMethods
 {
     public class GaussianConsensusAveraging : IAverageMethod, IStringOutput
     {

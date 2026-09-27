@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Averaging_Methods.Methods.BirgeRatioTool
+namespace AveragingMethods
 {
     public class BirgeRatioTool : IStringOutput
     {

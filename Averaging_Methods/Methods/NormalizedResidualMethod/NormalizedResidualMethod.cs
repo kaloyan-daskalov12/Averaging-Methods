@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Averaging_Methods.Methods.NormalizedResidualMethod
+namespace AveragingMethods
 {
     public class NormalizedResidualMethod : IAverageMethod, IStringOutput
     {

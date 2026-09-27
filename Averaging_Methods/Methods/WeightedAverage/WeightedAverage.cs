@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Averaging_Methods.Methods.WeightedAverage
+namespace AveragingMethods
 {
     // A simple container just for the pure math results
 

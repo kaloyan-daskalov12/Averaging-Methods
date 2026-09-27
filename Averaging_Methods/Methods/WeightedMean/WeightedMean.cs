@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Averaging_Methods.Methods.WeightedMean
+namespace AveragingMethods
 {
     public class WeightedMean : IAverageMethod, IStringOutput
     {
