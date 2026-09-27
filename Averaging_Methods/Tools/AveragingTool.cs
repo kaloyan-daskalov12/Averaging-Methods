@@ -18,6 +18,9 @@ namespace AveragingMethods
             Methods.Add(GaussianConsensusAveraging);
             Methods.Add(WeightedAverage);
             Methods.Add(EvaluatedAverage);
+            Methods.Add(ExpectedValueMethod);
+            Methods.Add(RajevalTechnique);
+            Methods.Add(UnweightedAverage);
 
             MethodsStringOutput = new List<IStringOutput>();
 
@@ -28,6 +31,9 @@ namespace AveragingMethods
             MethodsStringOutput.Add(GaussianConsensusAveraging);
             MethodsStringOutput.Add(WeightedAverage);
             MethodsStringOutput.Add(EvaluatedAverage);
+            MethodsStringOutput.Add(ExpectedValueMethod);
+            MethodsStringOutput.Add(RajevalTechnique);
+            MethodsStringOutput.Add(UnweightedAverage);
         }
 
         List<IAverageMethod> Methods { get; }
@@ -40,6 +46,9 @@ namespace AveragingMethods
         public GaussianConsensusAveraging GaussianConsensusAveraging { get; } = new GaussianConsensusAveraging();
         public WeightedAverage WeightedAverage { get; } = new WeightedAverage();
         public EvaluatedAverage EvaluatedAverage { get; } = new EvaluatedAverage();
+        public ExpectedValueMethod ExpectedValueMethod { get; } = new ExpectedValueMethod();
+        public RajevalTechnique RajevalTechnique { get; } = new RajevalTechnique();
+        public UnweightedAverage UnweightedAverage { get; } = new UnweightedAverage();
 
         public string[] GetResult(List<Value> values, List<int> indices)
         {
