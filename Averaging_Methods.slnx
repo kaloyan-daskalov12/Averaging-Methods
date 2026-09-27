@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Averaging_Methods_App/Averaging_Methods_App.csproj" />
+  <Project Path="Averaging_Methods/Averaging_Methods.csproj" />
+</Solution>

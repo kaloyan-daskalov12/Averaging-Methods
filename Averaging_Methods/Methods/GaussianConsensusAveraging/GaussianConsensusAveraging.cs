@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AveragingMethods;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AveragingMethods
 {
-    public class GaussianConsensusAveraging : IAverageMethod
+    public class GaussianConsensusAveraging : IAverageMethod, IStringOutput
     {
         public string Name => "Gaussian Consensus Averaging";
 
@@ -92,6 +93,11 @@ namespace AveragingMethods
             );
 
             return (mean, sigma);
+        }
+
+        public string GetOutput(List<Value> values)
+        {
+            throw new NotImplementedException();
         }
     }
 }

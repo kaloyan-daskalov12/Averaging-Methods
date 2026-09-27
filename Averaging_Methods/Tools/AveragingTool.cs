@@ -18,18 +18,57 @@ namespace AveragingMethods
             Methods.Add(GaussianConsensusAveraging);
             Methods.Add(WeightedAverage);
             Methods.Add(EvaluatedAverage);
+            Methods.Add(ExpectedValueMethod);
+            Methods.Add(RajevalTechnique);
+            Methods.Add(UnweightedAverage);
+
+            MethodsStringOutput = new List<IStringOutput>();
+
+            MethodsStringOutput.Add(BirgeRatioTool);
+            MethodsStringOutput.Add(WeightedMean);
+            MethodsStringOutput.Add(LimitedWeightMean);
+            MethodsStringOutput.Add(NormalizedResidualMethod);
+            MethodsStringOutput.Add(GaussianConsensusAveraging);
+            MethodsStringOutput.Add(WeightedAverage);
+            MethodsStringOutput.Add(EvaluatedAverage);
+            MethodsStringOutput.Add(ExpectedValueMethod);
+            MethodsStringOutput.Add(RajevalTechnique);
+            MethodsStringOutput.Add(UnweightedAverage);
         }
 
         List<IAverageMethod> Methods { get; }
+        List<IStringOutput> MethodsStringOutput { get; }
 
+        public BirgeRatioTool BirgeRatioTool { get; } = new BirgeRatioTool();
         public WeightedMean WeightedMean { get; } = new WeightedMean();
         public LimitedWeightMean LimitedWeightMean { get; } = new LimitedWeightMean();
         public NormalizedResidualMethod NormalizedResidualMethod { get; } = new NormalizedResidualMethod();
         public GaussianConsensusAveraging GaussianConsensusAveraging { get; } = new GaussianConsensusAveraging();
         public WeightedAverage WeightedAverage { get; } = new WeightedAverage();
         public EvaluatedAverage EvaluatedAverage { get; } = new EvaluatedAverage();
+        public ExpectedValueMethod ExpectedValueMethod { get; } = new ExpectedValueMethod();
+        public RajevalTechnique RajevalTechnique { get; } = new RajevalTechnique();
+        public UnweightedAverage UnweightedAverage { get; } = new UnweightedAverage();
 
         public string[] GetResult(List<Value> values, List<int> indices)
+        {
+            List<string> results = new List<string>();
+            for (int i = 0; i < MethodsStringOutput.Count; i++)
+            {
+                if (!indices.Contains(i)) continue;
+                try
+                {
+                    results.Add($"{MethodsStringOutput[i].Name}: {{\n{MethodsStringOutput[i].GetOutput(values)}\n}};");
+                }
+                catch (Exception e)
+                {
+                    results.Add($"{MethodsStringOutput[i].Name}: Exited with error: {{{e.Message}}}");
+                }
+            }
+            return results.ToArray();
+        }
+
+        public string[] Print(List<Value> values, List<int> indices)
         {
             List<string> results = new List<string>();
             for (int i = 0; i < Methods.Count; i++)
@@ -51,9 +90,9 @@ namespace AveragingMethods
         public string GetMethods()
         {
             string result = "";
-            for (int i = 0; i < Methods.Count; i++)
+            for (int i = 0; i < MethodsStringOutput.Count; i++)
             {
-                result += $"[{i}] {Methods[i].Name}\n";
+                result += $"[{i}] {MethodsStringOutput[i].Name}\n";
             }
             return result;
         }

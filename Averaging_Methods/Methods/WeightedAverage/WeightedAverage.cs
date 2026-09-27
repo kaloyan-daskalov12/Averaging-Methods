@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AveragingMethods;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,7 +7,7 @@ namespace AveragingMethods
 {
     // A simple container just for the pure math results
 
-    public class WeightedAverage: IAverageMethod
+    public class WeightedAverage: IAverageMethod, IStringOutput
     {
         public string Name => "Weighted Average v2";
 
@@ -33,6 +34,11 @@ namespace AveragingMethods
 
             // Return the pure mathematical mean and standard error
             return (sumWeightTimesValue / sumWeights,Math.Sqrt(1.0 / sumWeights));
+        }
+
+        public string GetOutput(List<Value> values)
+        {
+            throw new NotImplementedException();
         }
     }
 }
