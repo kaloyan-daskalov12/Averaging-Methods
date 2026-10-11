@@ -9,7 +9,7 @@ namespace AveragingMethods
     {
         public string Name => "Birge Ratio";
 
-        internal static BirgeRatioResult Calculate(List<Value> data)
+        public BirgeRatioResult Calculate(List<Value> data)
         {
             var validData = data.Where(v => v.DVal > 0).ToList();
             int n = validData.Count;
@@ -60,7 +60,8 @@ namespace AveragingMethods
 
         public string GetOutput(List<Value> values)
         {
-            throw new NotImplementedException();
+            BirgeRatioResult result = Calculate(values);
+            return $"  Ratio = {result.Ratio:0.####}\n  Critical limit = {result.CriticalLimit:0.####}\n  Is consistent = {result.IsConsistent}";
         }
     }
 }
