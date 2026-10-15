@@ -56,7 +56,7 @@ namespace Averaging_Methods_App
                 {
                     foreach (var d in data)
                     {
-                        string final_path = Path.Combine(Path.GetFullPath(output_path), Path.GetRelativePath(path, d.Path));
+                        string final_path = Path.Combine(Path.GetFullPath(output_path), "Results", Path.GetRelativePath(path, d.Path));
                         Directory.CreateDirectory(Path.GetDirectoryName(final_path));
                         if (d.Values.Count != 0) File.WriteAllLines(final_path, Tool.GetResult(d.Values, indices));
                     }
@@ -71,13 +71,13 @@ namespace Averaging_Methods_App
                         if (d.Values.Count != 0) lines.AddRange(Tool.GetResult(d.Values, indices));
                         lines.Add("\n");
                     }
-                    File.WriteAllLines(Path.GetFullPath(output_path), lines.ToArray());
+                    File.WriteAllLines(Path.Combine(Path.GetFullPath(output_path), "Results.txt"), lines.ToArray());
                 }
             }
             else
             {
                 (string Path, List<Value> Values) data = ParseFile(path);
-                File.WriteAllLines(Path.GetFullPath(output_path), Tool.GetResult(data.Values, indices));
+                File.WriteAllLines(Path.Combine(Path.GetFullPath(output_path), "Results.txt"), Tool.GetResult(data.Values, indices));
             }
 
             Console.WriteLine("The results are ready and saved successfully!");

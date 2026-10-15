@@ -1,4 +1,5 @@
 <Solution>
-  <Project Path="Averaging_Methods_App/Averaging_Methods_App.csproj" />
+  <Project Path="Averaging_Methods.Test/Averaging_Methods.Test.csproj" Id="85b6c0a7-0f7b-40e0-8c99-9f46e4d9505e" />
   <Project Path="Averaging_Methods/Averaging_Methods.csproj" />
+  <Project Path="Averaging_Methods_App/Averaging_Methods_App.csproj" />
 </Solution>

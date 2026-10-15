@@ -55,7 +55,8 @@ namespace AveragingMethods
 
         public string GetOutput(List<Value> values)
         {
-            throw new NotImplementedException();
+            var result = Compute(values);
+            return $"  Mean = {result.Mean:0.####}\n  Uncertainty = {result.Sigma:0.####}";
         }
 
         double Weight(double sigma)
