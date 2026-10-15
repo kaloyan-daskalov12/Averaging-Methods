@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Averaging_Methods.Methods.WeightedMean
+namespace AveragingMethods
 {
-    public class WeightedMean : IAverageMethod
+    public class WeightedMean : IAverageMethod, IStringOutput
     {
         public string Name => "Weighted Mean";
 
@@ -18,6 +18,11 @@ namespace Averaging_Methods.Methods.WeightedMean
             double sigma = Math.Sqrt(1.0 / sumW);
 
             return (mean, sigma);
+        }
+
+        public string GetOutput(List<Value> values)
+        {
+            throw new NotImplementedException();
         }
 
         double Weight(double sigma)

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Averaging_Methods.Methods.NormalizedResidualMethod
+namespace AveragingMethods
 {
-    public class NormalizedResidualMethod : IAverageMethod
+    public class NormalizedResidualMethod : IAverageMethod, IStringOutput
     {
         public string Name => "Normalized Residual Method";
 
@@ -51,6 +51,11 @@ namespace Averaging_Methods.Methods.NormalizedResidualMethod
             double sigma = Math.Sqrt(1.0 / finalW);
 
             return (finalMean, sigma);
+        }
+
+        public string GetOutput(List<Value> values)
+        {
+            throw new NotImplementedException();
         }
 
         double Weight(double sigma)

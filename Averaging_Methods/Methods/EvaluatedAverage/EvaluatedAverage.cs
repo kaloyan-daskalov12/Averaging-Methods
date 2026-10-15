@@ -3,20 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Averaging_Methods.Methods.EvaluatedAverage
+namespace AveragingMethods
 {
-    public class AveragingResult
-    {
-        public double WeightedMean { get; set; }
-        public double InternalUncertainty { get; set; }
-        public double ExternalUncertainty { get; set; }
-        public double ReducedChiSquared { get; set; }
-        public double CriticalChiSquared { get; set; }
-        public bool IsDiscrepant { get; set; }
-        public bool LwmApplied { get; set; } // Tracks if the 50% rule was triggered
-    }
-
-    public class EvaluatedAverage : IAverageMethod
+    public class EvaluatedAverage : IAverageMethod, IStringOutput
     {
         private static readonly double[] CriticalReducedChiSq95 = new double[]
         {
@@ -113,6 +102,11 @@ namespace Averaging_Methods.Methods.EvaluatedAverage
         {
             AveragingResult r = CalculateWeightedAverage(values);
             return (r.WeightedMean, r.InternalUncertainty);
+        }
+
+        public string GetOutput(List<Value> values)
+        {
+            throw new NotImplementedException();
         }
     }
 }
