@@ -107,11 +107,11 @@ namespace AveragingMethods
         public string GetOutput(List<Value> values)
         {
             var result = CalculateWeightedAverage(values);
-            return $"  Weighted mean = {result.WeightedMean:0.####}\n" +
-                $"  Internal uncertainty = {result.InternalUncertainty:0.####}\n" +
-                $"  External uncertainty = {result.ExternalUncertainty:0.####}\n" +
-                $"  Reduced chi squared = {result.ReducedChiSquared:0.####}\n" +
-                $"  Critical chi squared = {result.CriticalChiSquared:0.####}\n" +
+            return $"  Weighted mean = {result.WeightedMean}\n" +
+                $"  Internal uncertainty = {result.InternalUncertainty}\n" +
+                $"  External uncertainty = {result.ExternalUncertainty}\n" +
+                $"  Reduced chi squared = {result.ReducedChiSquared}\n" +
+                $"  Critical chi squared = {result.CriticalChiSquared}\n" +
                 $"  Is discrepant = {result.IsDiscrepant}\n" +
                 $"  LWM applied = {result.LwmApplied}";
         }

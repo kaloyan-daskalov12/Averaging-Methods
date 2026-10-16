@@ -133,7 +133,9 @@ namespace AveragingMethods
                 ? "none"
                 : string.Join(", ", RemovedOutliers.Select(v => v.ToString()));
 
-            return $"  Mean = {mean:0.####}\n  Sigma = {sigma:0.####}\n  Outliers removed = {outliers}";
+            return $"  Mean = {mean}\n" +
+                $"  Sigma = {sigma}\n" +
+                $"  Outliers removed = {outliers}";
         }
     }
 }
