@@ -48,7 +48,9 @@ namespace AveragingMethods
             var validData = values.Where(v => v.DVal > 0).ToList();
             var (mean, sigma) = Compute(values);
 
-            return $"  N = {validData.Count}\n  Mean = {mean:0.####}\n  Sigma (standard error of the mean) = {sigma:0.####}";
+            return $"  N = {validData.Count}\n" +
+                $"  Mean = {mean}\n" +
+                $"  Sigma (standard error of the mean) = {sigma}";
         }
     }
 }

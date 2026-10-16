@@ -68,13 +68,17 @@ namespace AveragingMethods
 
             if (validData.Count < 2)
             {
-                return $"  N = {validData.Count}\n  Mean = {mean:0.####}\n  Sigma = {sigma:0.####}";
+                return $"  N = {validData.Count}\n  Mean = {mean}\n  Sigma = {sigma}";
             }
 
             double within = validData.Average(v => v.DVal * v.DVal);
             double between = validData.Average(v => (v.Val - mean) * (v.Val - mean));
 
-            return $"  N = {validData.Count}\n  Mean = {mean:0.####}\n  Within-measurement variance = {within:0.####}\n  Between-measurement variance = {between:0.####}\n  Sigma = {sigma:0.####}";
+            return $"  N = {validData.Count}\n" +
+                $"  Mean = {mean}\n" +
+                $"  Within-measurement variance = {within}\n" +
+                $"  Between-measurement variance = {between}\n" +
+                $"  Sigma = {sigma}";
         }
     }
 }

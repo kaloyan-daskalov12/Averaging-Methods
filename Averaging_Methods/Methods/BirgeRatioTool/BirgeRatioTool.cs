@@ -61,7 +61,7 @@ namespace AveragingMethods
         public string GetOutput(List<Value> values)
         {
             BirgeRatioResult result = Calculate(values);
-            return $"  Ratio = {result.Ratio:0.####}\n  Critical limit = {result.CriticalLimit:0.####}\n  Is consistent = {result.IsConsistent}";
+            return $"  Ratio = {result.Ratio}\n  Critical limit = {result.CriticalLimit}\n  Is consistent = {result.IsConsistent}";
         }
     }
 }
